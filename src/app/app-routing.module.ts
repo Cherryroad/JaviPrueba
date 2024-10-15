@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'jddparticipantes',
     loadChildren: () => import('./jddparticipantes/jddparticipantes.module').then( m => m.JddparticipantesPageModule)
   },
+  {
+    path: 'wasa',
+    loadChildren: () => import('./wasa/wasa.module').then( m => m.WasaPageModule)
+  },
 ];
 
 @NgModule({
