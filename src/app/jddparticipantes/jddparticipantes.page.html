@@ -1,0 +1,67 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú principal</ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-card-title> Lista participantes </ion-card-title>
+    <div style="position: absolute; bottom: 20px;">
+      <ion-list>
+        <ion-item lines="none">
+          <ion-button expand="full" fill="clear" routerLink="/jddlogin" style="color: red;">
+            Salir
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Lista Participantes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-item *ngFor="let usuario of datos">
+      <ion-card>
+        <ion-card-content>
+          <img class="ion-text-center" [src]="usuario.foto" />
+          <ion-card-header>
+            <ion-item style="right: 10%;">
+              <ion-card-title>{{ usuario.Nombre }} {{ usuario.Apellido }}</ion-card-title>
+            </ion-item>
+            <ion-card-subtitle style="right: 3%;">{{ usuario.Descripcion }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-item style="right: 6%;">{{ usuario.Actividad }}</ion-item>
+          <ion-item style="right: 6%;">{{ usuario.Hora_entrada }} {{ usuario.Hora_salida }} </ion-item>
+          <ion-item style="right: 6%;">{{ usuario.Clasificacion }}</ion-item>
+          <ion-item style="right: 6%;" [ngStyle]="{'color': usuario.Estado === 'Activo' ? 'green' : 'red'}"> {{ usuario.Estado }}</ion-item>
+          <div style="display: flex; justify-content: space-between; text-transform: initial;">
+            <ion-button style="text-transform: initial;" 
+              (click)="cambiarEstado(usuario, 'Activo')" 
+              fill="clear" 
+              [ngClass]="{'gray-button': usuario.Estado === 'Activo'}" 
+              [style.color]="usuario.Estado === 'Activo' ? 'gray' : 'green'">
+              Activar
+            </ion-button>
+            <ion-button style="text-transform: initial;"
+              (click)="cambiarEstado(usuario, 'Inactivo')" 
+              fill="clear" 
+              [ngClass]="{'gray-button': usuario.Estado === 'Inactivo'}" 
+              [style.color]="usuario.Estado === 'Inactivo' ? 'blue' : 'red'">
+              Desactivar
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-content>
+</div>

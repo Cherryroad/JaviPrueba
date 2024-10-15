@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <ion-card style="width: 73%; margin: 40px auto 0; ">
+    <img class="card-image" src="./../../assets/Imagen Login.png"
+      style="display: block; margin: auto; width: 150px; margin-top: 50px;"/>
+    <!-- display: ocupa todo el espacio / margin: centra el elemento / width: que tan ancho lo quiero -->
+    <ion-item>
+      <!-- este ion item es para crear la linea que se hace en el logo y bienvenido -->
+    </ion-item>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Bienvenido</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- font-size es el tamaño de la letra -->
+  <ion-card-title style="left: 13%; margin-top: 20px; font-size: 18px;">
+    Nombre de usuario
+  </ion-card-title>
+  
+  <ion-card-content>
+    <!-- fill estilo de la fuente de input -->
+    <ion-input
+      fill="outline"
+      type="text"
+      style="width: 80%; margin: 0 auto;">
+    </ion-input>
+    <ion-card-subtitle style="left:10%">Ingrese su nombre de usuario aquí</ion-card-subtitle>
+  </ion-card-content>
+
+  <ion-card-title style="left:13%; font-size: 18px;">
+    Contraseña
+  </ion-card-title>
+
+  <ion-card-content>
+    <ion-input
+      fill="outline"
+      type="password"
+      style="width: 80%; margin: 0 auto;"
+    ></ion-input>
+    <ion-card-subtitle style="left:10%">Ingrese su contraseña aquí</ion-card-subtitle>
+  </ion-card-content>
+  <!-- display: ocupa todo el espacio / margin: centra el elemento / width: que tan ancho lo quiero, display y width hacen un duo bueno para que el boton este en el centro y se repite -->
+  <ion-button routerLink="/jddparticipantes" style="display: block; margin: 20px auto; width: 260px; text-transform: capitalize;">Iniciar sesión</ion-button>
+</ion-content>
